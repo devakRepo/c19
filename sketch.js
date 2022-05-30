@@ -85,11 +85,11 @@ function draw() {
 
     }else if (spdG.isTouching(boy)){
       path.velocityY = path.velocityY *2
-      cashG.setVelocityYEach = cashG.setVelocityYEach *2
-      diamondsG.setVelocityYEach = diamondsG.setVelocityYEach *2
-      jewelryG.setVelocityYEach = jewelryG.setVelocityYEach *2
-      swordGroup.setVelocityYEach = swordGroup.setVelocityYEach *2
-      carG.setVelocityYEach = carG.setVelocityYEach *2
+      cashG.setVelocityYEach = cashG.setVelocityYEach *4
+      diamondsG.setVelocityYEach = diamondsG.setVelocityYEach *4
+      jewelryG.setVelocityYEach = jewelryG.setVelocityYEach *4
+      swordGroup.setVelocityYEach = swordGroup.setVelocityYEach *4
+      carG.setVelocityYEach = carG.setVelocityYEach *4
       spdG.destroyEach();
 
     } 
@@ -101,15 +101,15 @@ function draw() {
         boy.y=300;
         boy.scale=0.6;
         
+        cashG.setVelocityYEach(0);
+        diamondsG.setVelocityYEach(0);
+        jewelryG.setVelocityYEach(0);
+        swordGroup.setVelocityYEach(0)
+         
         cashG.destroyEach();
         diamondsG.destroyEach();
         jewelryG.destroyEach();
         swordGroup.destroyEach();
-        
-        cashG.setVelocityYEach(0);
-        diamondsG.setVelocityYEach(0);
-        jewelryG.setVelocityYEach(0);
-        swordGroup.setVelocityYEach(0);
      
     }
 
@@ -177,7 +177,7 @@ function createCar(){
 }
 
 function createpwr(){
-  if (World.frameCount % 100 == 0) {
+  if (World.frameCount % 500 == 0) {
   var spd = createSprite(Math.round(random(50, 350),40, 10, 10));
   spd.addImage(spdImg);
   spd.scale=0.35;
